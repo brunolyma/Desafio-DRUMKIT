@@ -1,0 +1,1 @@
+Olá, aqui temos um DRUMKIT virtual, ou seja, uma espécie de bateria virtual, você pode interagir clicando com o mouse ou pressionando uma das letras determinadas do teclado.
