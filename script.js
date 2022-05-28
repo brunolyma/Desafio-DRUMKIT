@@ -44,14 +44,13 @@ addEventListener("keypress", (event) => {
   if (key == "ENTER" || key == " ") {
     start()
   } else if (keyExist != -1) {
-      playSounds(key)
-    } else {
-      console.log(
-        `[ERRO] Tecla pressionada não é válida\nTente uma das seguintes (${text})`
-      )
-    }
+    playSounds(key)
+  } else {
+    console.log(
+      `[ERRO] Tecla pressionada não é válida\nTente uma das seguintes (${text})`
+    )
   }
-)
+})
 
 function start() {
   if (worked == false) {
