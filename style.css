@@ -27,9 +27,7 @@ main {
 .title {
   margin: 20vh auto;
 
-  text-shadow:
-    0 0.3rem 1rem #c08a43,
-    0 0.3rem 1.5rem black,
+  text-shadow: 0 0.3rem 1rem #c08a43, 0 0.3rem 1.5rem black,
     0 0.3rem 1.5rem black;
 
   color: #ffcc00;
@@ -60,27 +58,27 @@ main {
   background-color: #000000b3;
   border: 0.1rem solid #ffcc0080;
   border-radius: 0.2rem;
-  
+
   color: aliceblue;
-  
+
   font-size: 3rem;
-  
+
   user-select: none;
 
   transition: all 400ms;
 }
 .key:hover,
 .key:active {
-    box-shadow: 0 0 1rem #ffcc0070, 0 0 1rem #ffcc0070;
-    border-radius: 1rem;
+  box-shadow: 0 0 1rem #ffcc0070, 0 0 1rem #ffcc0070;
+  border-radius: 1rem;
 
-    background-color: #ff9f21;
+  background-color: #ff9f21;
 
-    color: black;
-    font-weight: bold;    
+  color: black;
+  font-weight: bold;
 
-    transition: background-color 400ms;
-    cursor: pointer;
+  transition: background-color 400ms;
+  cursor: pointer;
 }
 #start {
   animation: pulsate 1s ease-out infinite;
@@ -94,12 +92,20 @@ main {
 
   transition: 400ms;
 }
-  @keyframes pulsate {
-    0% {box-shadow: 0 0 0 #ffcc0070;}
-    25% {box-shadow: 0 0 1rem #ffcc00;}
-    50% {box-shadow: 0 0 1rem #ffcc00;}
-    100% {box-shadow: 0 0 0 #ffcc00;}
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 0 #ffcc0070;
   }
-.start{
+  25% {
+    box-shadow: 0 0 1rem #ffcc00;
+  }
+  50% {
+    box-shadow: 0 0 1rem #ffcc00;
+  }
+  100% {
+    box-shadow: 0 0 0 #ffcc00;
+  }
+}
+.start {
   display: none;
 }
