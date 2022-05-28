@@ -1,4 +1,5 @@
 "use strict"
+const text = ["A", "S", "D", "F", "G", "H", "J", "K"]
 const sounds = {
   A: "ride.wav",
   S: "clap.wav",
@@ -9,7 +10,7 @@ const sounds = {
   J: "snare.wav",
   K: "tom.wav",
 }
-const text = ["A", "S", "D", "F", "G", "H", "J", "K"]
+let worked = false
 
 function divCreator(text) {
   text.forEach((character) => {
@@ -23,25 +24,39 @@ function divCreator(text) {
 
 function playSounds(event) {
   const audio = new Audio(`sounds/${sounds[event]}`)
-  if (event != 'container') 
-  audio.play()
+  if (event != "container") audio.play()
 }
 
 const activeButton = (event) => {
   const char = event.target.id
-  console.log(char)
-  playSounds(char)
+  if (char == "start") {
+    start()
+  } else {
+    playSounds(char)
+  }
 }
 
 document.getElementById("container").addEventListener("click", activeButton)
-addEventListener('keypress', (event) => {
+addEventListener("keypress", (event) => {
   const key = event.key.toUpperCase()
   const keyExist = text.indexOf(key)
-  if(keyExist != -1){
-    playSounds(key)
-  } else {
-    console.log(`[ERRO] Tecla pressionada não é válida\nTente uma das seguintes (${text})`)
-  }
-})
 
-divCreator(text)
+  if (key == "ENTER" || key == " ") {
+    start()
+  } else if (keyExist != -1) {
+      playSounds(key)
+    } else {
+      console.log(
+        `[ERRO] Tecla pressionada não é válida\nTente uma das seguintes (${text})`
+      )
+    }
+  }
+)
+
+function start() {
+  if (worked == false) {
+    document.getElementById("start").classList.add("start")
+    divCreator(text)
+    worked = true
+  }
+}
